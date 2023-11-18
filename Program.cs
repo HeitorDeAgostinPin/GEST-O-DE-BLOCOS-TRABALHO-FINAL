@@ -1,4 +1,4 @@
-﻿namespace GESTÃO_DE_BLOCOS_TRABALHO_FINAL
+namespace GESTÃO_DE_BLOCOS_TRABALHO_FINAL
 {
     using System;
     using System.Collections.Generic;
@@ -28,14 +28,15 @@
             while (!sair)
             {
                 // Menu de opções.
-                Console.WriteLine("Selecione uma opção:");
-                Console.WriteLine("1 - Cadastrar bloco");
-                Console.WriteLine("2 - Listar blocos");
-                Console.WriteLine("3 - Buscar bloco por código");
-                Console.WriteLine("4 - Listar blocos por pedreira");
-                Console.WriteLine("5 - Sair");
-                Console.WriteLine("6 - SalvarBlocosEmArquivoTXT()");
-                Console.WriteLine("7 - LerBlocosDeArquivoTXT()");
+                Console.WriteLine(">>>BEM VINDO AO MENU DE CADASTRO DE BLOCOS<<<");
+                Console.WriteLine("Selecione uma opção:\n");
+                Console.WriteLine("1 - Cadastrar bloco\n");
+                Console.WriteLine("2 - Listar blocos\n");
+                Console.WriteLine("3 - Buscar bloco por código\n");
+                Console.WriteLine("4 - Listar blocos por pedreira\n");
+                Console.WriteLine("5 - Sair\n");
+                Console.WriteLine("6 - Salvar Blocos Em Arquivo TXT\n");
+                Console.WriteLine("7 - Ler Blocos De Arquivo TXT\n");
 
                 int opcao;
                 if (!int.TryParse(Console.ReadLine(), out opcao))
@@ -119,6 +120,7 @@
                 blocos.Add(bloco);
 
                 Console.WriteLine("Bloco cadastrado com sucesso!");
+                Console.Clear();
             }
             catch (Exception ex)
             {
@@ -142,6 +144,7 @@
                 Console.WriteLine($"Valor de venda: {bloco.valor_venda}");
                 Console.WriteLine($"Pedreira: {bloco.pedreira}");
                 Console.WriteLine();
+
             }
         }
 
@@ -245,6 +248,7 @@
                     }
 
                     Console.WriteLine("Blocos salvos com sucesso no arquivo em " + caminhoCompleto);
+                    Console.Clear();
                 }
             }
             catch (Exception ex)
@@ -264,6 +268,7 @@
                 Console.Write("Digite o nome do arquivo para ler os blocos: ");
                 string nomeArquivo = Console.ReadLine();
                 string caminhoCompleto = Path.Combine(pastaDestino, nomeArquivo);
+                Console.Clear();
 
                 if (File.Exists(caminhoCompleto))
                 {
